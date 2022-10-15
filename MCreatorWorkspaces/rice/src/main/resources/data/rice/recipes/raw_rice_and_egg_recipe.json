@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:egg"
+    },
+    {
+      "tag": "forge:tool_skillet"
+    },
+    {
+      "tag": "forge:rice_done"
+    }
+  ],
+  "result": {
+    "item": "rice:raw_rice_and_egg",
+    "count": 1
+  }
+}

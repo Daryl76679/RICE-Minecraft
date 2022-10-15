@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    },
+    {
+      "item": "rice:white_rice_flour_dust"
+    }
+  ],
+  "result": {
+    "item": "rice:white_rice_flour",
+    "count": 1
+  }
+}

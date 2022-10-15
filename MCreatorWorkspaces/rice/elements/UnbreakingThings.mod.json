@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 3,
+    "group": "",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "TAG:forge:rice_done"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RawWhiteRice"
+    },
+    "name": "unbreaking_things",
+    "namespace": "mod"
+  }
+}

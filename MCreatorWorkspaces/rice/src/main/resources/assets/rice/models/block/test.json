@@ -1,0 +1,11 @@
+{
+  "parent": "rice:custom/rice_plant",
+  "textures": {
+    "all": "rice:blocks/cultivatedrice",
+    "particle": "rice:blocks/cultivatedrice",
+    "0": "rice:blocks/cultivated_rice",
+    "1": "rice:blocks/leftricestem",
+    "2": "rice:blocks/riceleaves",
+    "3": "rice:blocks/rice"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 3,
+    "group": "",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:crops/rice"
+      },
+      {
+        "value": "TAG:forge:rice_done"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:crops/rice"
+      },
+      {
+        "value": "TAG:forge:crops/rice"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RawWhiteRice"
+    },
+    "name": "white_rice_recipe",
+    "namespace": "mod"
+  }
+}

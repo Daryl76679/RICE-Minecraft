@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "TAG:forge:tool_grinder"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      },
+      {
+        "value": "CUSTOM:RawBrownRice"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:BrownRiceFlour"
+    },
+    "name": "rice_flour_recipe_1",
+    "namespace": "mod"
+  }
+}

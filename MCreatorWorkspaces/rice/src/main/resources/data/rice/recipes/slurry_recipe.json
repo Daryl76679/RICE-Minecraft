@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "rice:rice_bowl_2"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "rice:rice_bowl_2"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "rice:bubod"
+    }
+  ],
+  "result": {
+    "item": "rice:fermenting_rice_mix",
+    "count": 1
+  }
+}

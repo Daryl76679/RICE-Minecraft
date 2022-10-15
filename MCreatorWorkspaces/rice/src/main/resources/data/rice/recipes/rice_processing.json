@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:tool_grinder"
+    },
+    {
+      "item": "rice:rice_sprout_block"
+    }
+  ],
+  "result": {
+    "item": "rice:raw_brown_rice",
+    "count": 6
+  }
+}

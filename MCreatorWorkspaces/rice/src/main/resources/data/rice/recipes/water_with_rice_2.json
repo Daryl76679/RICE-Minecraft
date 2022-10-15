@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:raw_white_rice"
+    },
+    {
+      "item": "rice:raw_white_rice"
+    },
+    {
+      "item": "rice:raw_white_rice"
+    },
+    {
+      "item": "rice:water_bowl"
+    }
+  ],
+  "result": {
+    "item": "rice:water_bowl_with_rice_2",
+    "count": 1
+  }
+}

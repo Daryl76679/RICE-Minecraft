@@ -1,0 +1,15 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "rice:raw_brown_rice"
+    }
+  ],
+  "results": [
+    {
+      "item": "rice:brown_rice_flour_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 85
+}

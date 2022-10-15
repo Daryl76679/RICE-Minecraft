@@ -1,0 +1,32 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:RiceSproutBlock"
+      },
+      {
+        "value": "CUSTOM:RiceSproutSecondState"
+      },
+      {
+        "value": "CUSTOM:RiceSproutThirdState"
+      },
+      {
+        "value": "CUSTOM:RiceSproutTop"
+      },
+      {
+        "value": "CUSTOM:CultivatedRiceBase"
+      },
+      {
+        "value": "CUSTOM:CultivatedRiceTop"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "name": "rice_crops",
+    "namespace": "crops"
+  }
+}

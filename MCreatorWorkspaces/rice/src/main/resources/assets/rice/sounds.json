@@ -1,0 +1,20 @@
+{
+  "doughpunch": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "rice:dough_punch_asmr-cute96xqiue",
+        "stream": false
+      }
+    ]
+  },
+  "doughpunchloud": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "rice:dough_punch_asmr-cute96xqiue_loud",
+        "stream": false
+      }
+    ]
+  }
+}

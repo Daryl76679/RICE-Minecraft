@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "rice:raw_brown_rice"
+    },
+    "1": {
+      "item": "rice:raw_brown_rice"
+    },
+    "2": {
+      "item": "rice:raw_brown_rice"
+    },
+    "3": {
+      "item": "rice:raw_brown_rice"
+    },
+    "4": {
+      "tag": "forge:tool_grinder"
+    },
+    "5": {
+      "item": "rice:raw_brown_rice"
+    },
+    "6": {
+      "item": "rice:raw_brown_rice"
+    },
+    "7": {
+      "item": "rice:raw_brown_rice"
+    },
+    "8": {
+      "item": "rice:raw_brown_rice"
+    }
+  },
+  "result": {
+    "item": "rice:brown_rice_flour",
+    "count": 1
+  }
+}

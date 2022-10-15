@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "cultivated_rice",
+        "1": "leftricestem",
+        "2": "riceleaves",
+        "3": "rice"
+      },
+      "name": "default"
+    }
+  }
+}

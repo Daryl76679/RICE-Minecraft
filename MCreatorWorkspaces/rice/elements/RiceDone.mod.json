@@ -1,0 +1,20 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:RiceBowl"
+      },
+      {
+        "value": "CUSTOM:RiceBowl2"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "rice_done",
+    "namespace": "forge"
+  }
+}

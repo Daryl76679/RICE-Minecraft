@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "pot_texture_a",
+        "1": "pot_texture_b"
+      },
+      "name": "default"
+    }
+  }
+}

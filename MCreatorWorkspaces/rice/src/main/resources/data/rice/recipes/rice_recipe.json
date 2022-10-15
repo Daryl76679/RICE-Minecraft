@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:harvested_rice"
+    },
+    {
+      "item": "rice:grain_flail"
+    }
+  ],
+  "result": {
+    "item": "rice:rice_sprout_block",
+    "count": 8
+  }
+}

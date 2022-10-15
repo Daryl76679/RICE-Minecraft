@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:water_bowl"
+    },
+    {
+      "tag": "forge:rice_powder"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "rice:bubod_dough",
+    "count": 1
+  }
+}

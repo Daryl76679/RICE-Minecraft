@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:egg"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:tool_skillet"
+      },
+      {
+        "value": "TAG:forge:rice_done"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RawRiceAndEgg"
+    },
+    "name": "raw_rice_and_egg_recipe",
+    "namespace": "mod"
+  }
+}

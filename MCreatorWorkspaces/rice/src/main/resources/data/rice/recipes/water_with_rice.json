@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "item": "rice:water_bowl"
+    }
+  ],
+  "result": {
+    "item": "rice:water_bowl_with_rice",
+    "count": 1
+  }
+}

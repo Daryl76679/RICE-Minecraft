@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345"
+  ],
+  "key": {
+    "1": {
+      "tag": "forge:milk"
+    },
+    "3": {
+      "item": "rice:tapai"
+    },
+    "4": {
+      "tag": "forge:tool_grinder"
+    },
+    "5": {
+      "item": "rice:tapai"
+    }
+  },
+  "result": {
+    "item": "rice:galapong",
+    "count": 1
+  }
+}

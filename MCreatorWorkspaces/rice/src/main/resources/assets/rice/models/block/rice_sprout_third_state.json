@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "rice:blocks/second_state",
+    "particle": "rice:blocks/second_state"
+  }
+}

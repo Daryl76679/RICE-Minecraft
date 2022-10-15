@@ -1,0 +1,15 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "rice:raw_white_rice"
+    }
+  ],
+  "results": [
+    {
+      "item": "rice:white_rice_flour_dust",
+      "count": 1
+    }
+  ],
+  "processingTime": 85
+}

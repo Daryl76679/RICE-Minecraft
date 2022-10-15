@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "rice:block/third_state"
+    },
+    "half=lower": {
+      "model": "rice:block/third_state_bottom"
+    }
+  }
+}

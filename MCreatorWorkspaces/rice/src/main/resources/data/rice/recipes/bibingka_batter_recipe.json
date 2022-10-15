@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "tag": "forge:egg"
+    },
+    "4": {
+      "item": "rice:galapong"
+    },
+    "5": {
+      "tag": "forge:egg"
+    },
+    "6": {
+      "item": "minecraft:bowl"
+    },
+    "7": {
+      "item": "minecraft:bowl"
+    },
+    "8": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "rice:bibingka_dough",
+    "count": 3
+  }
+}

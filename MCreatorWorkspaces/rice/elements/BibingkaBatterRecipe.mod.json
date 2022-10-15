@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 3,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.SUGAR"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:egg"
+      },
+      {
+        "value": "CUSTOM:Galapong"
+      },
+      {
+        "value": "TAG:forge:egg"
+      },
+      {
+        "value": "Items.BOWL"
+      },
+      {
+        "value": "Items.BOWL"
+      },
+      {
+        "value": "Items.BOWL"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Bibingka"
+    },
+    "name": "bibingka_batter_recipe",
+    "namespace": "mod"
+  }
+}

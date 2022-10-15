@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "rice:blocks/rice",
+    "particle": "rice:blocks/rice"
+  }
+}

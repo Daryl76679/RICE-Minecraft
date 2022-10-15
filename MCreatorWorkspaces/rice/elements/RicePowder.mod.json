@@ -1,0 +1,20 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:BrownRiceFlour"
+      },
+      {
+        "value": "CUSTOM:WhiteRiceFlour"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "rice_powder",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "string",
+        "1": "sticks"
+      },
+      "name": "default"
+    }
+  }
+}

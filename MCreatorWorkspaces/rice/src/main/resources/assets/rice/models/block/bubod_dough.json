@@ -1,0 +1,8 @@
+{
+  "parent": "rice:custom/bubod",
+  "textures": {
+    "all": "rice:blocks/buboddough",
+    "particle": "rice:blocks/buboddough",
+    "0": "rice:blocks/buboddough"
+  }
+}
