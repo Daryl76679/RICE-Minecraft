@@ -1,90 +1,59 @@
 
 package net.mcreator.rice.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.rice.RiceModElements;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.EquipmentSlot;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
-@RiceModElements.ModElement.Tag
-public class GrainFlailItem extends RiceModElements.ModElement {
-	@ObjectHolder("rice:grain_flail")
-	public static final Item block = null;
-
-	public GrainFlailItem(RiceModElements instance) {
-		super(instance, 21);
+public class GrainFlailItem extends Item {
+	public GrainFlailItem() {
+		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).durability(30).rarity(Rarity.COMMON));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.EAT;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxDamage(30).rarity(Rarity.COMMON));
-			setRegistryName("grain_flail");
-		}
+	@Override
+	public boolean hasCraftingRemainingItem() {
+		return true;
+	}
 
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.EAT;
+	@Override
+	public ItemStack getContainerItem(ItemStack itemstack) {
+		ItemStack retval = new ItemStack(this);
+		retval.setDamageValue(itemstack.getDamageValue() + 1);
+		if (retval.getDamageValue() >= retval.getMaxDamage()) {
+			return ItemStack.EMPTY;
 		}
+		return retval;
+	}
 
-		@Override
-		public boolean hasContainerItem() {
-			return true;
-		}
+	@Override
+	public boolean isRepairable(ItemStack itemstack) {
+		return false;
+	}
 
-		@Override
-		public ItemStack getContainerItem(ItemStack itemstack) {
-			ItemStack retval = new ItemStack(this);
-			retval.setDamage(itemstack.getDamage() + 1);
-			if (retval.getDamage() >= retval.getMaxDamage()) {
-				return ItemStack.EMPTY;
-			}
-			return retval;
+	@Override
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+		if (equipmentSlot == EquipmentSlot.MAINHAND) {
+			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+			builder.put(Attributes.ATTACK_DAMAGE,
+					new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Item modifier", 3d, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_SPEED,
+					new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Item modifier", -2.4, AttributeModifier.Operation.ADDITION));
 		}
-
-		@Override
-		public boolean isRepairable(ItemStack itemstack) {
-			return false;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
-
-		@Override
-		public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType slot) {
-			if (slot == EquipmentSlotType.MAINHAND) {
-				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-				builder.putAll(super.getAttributeModifiers(slot));
-				builder.put(Attributes.ATTACK_DAMAGE,
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Item modifier", (double) 3, AttributeModifier.Operation.ADDITION));
-				builder.put(Attributes.ATTACK_SPEED,
-						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Item modifier", -2.4, AttributeModifier.Operation.ADDITION));
-			}
-			return super.getAttributeModifiers(slot);
-		}
+		return super.getDefaultAttributeModifiers(equipmentSlot);
 	}
 }

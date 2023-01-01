@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "rice:items/riceflour1"
+    "layer0": "rice:items/riceflour1_2"
   }
 }

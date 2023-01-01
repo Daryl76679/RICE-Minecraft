@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "tag": "forge:tool_pot"
+    },
+    {
+      "tag": "forge:crops/cabbage"
+    }
+  ],
+  "result": {
+    "item": "rice:cabbage_in_water",
+    "count": 1
+  }
+}

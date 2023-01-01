@@ -3,94 +3,146 @@ package net.mcreator.rice.procedures;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.rice.item.WaterBowlItem;
-import net.mcreator.rice.RiceMod;
+import net.mcreator.rice.init.RiceModItems;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
+@Mod.EventBusSubscriber
 public class Water2Procedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-			PlayerEntity entity = event.getPlayer();
-			if (event.getHand() != entity.getActiveHand()) {
-				return;
-			}
-			double i = event.getPos().getX();
-			double j = event.getPos().getY();
-			double k = event.getPos().getZ();
-			IWorld world = event.getWorld();
-			BlockState state = world.getBlockState(event.getPos());
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("direction", event.getFace());
-			dependencies.put("blockstate", state);
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
-		}
+	@SubscribeEvent
+	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+		if (event.getHand() != event.getPlayer().getUsedItemHand())
+			return;
+		execute(event, event.getWorld(), event.getPlayer());
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				RiceMod.LOGGER.warn("Failed to load dependency world for procedure Water2!");
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				RiceMod.LOGGER.warn("Failed to load dependency x for procedure Water2!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				RiceMod.LOGGER.warn("Failed to load dependency y for procedure Water2!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				RiceMod.LOGGER.warn("Failed to load dependency z for procedure Water2!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				RiceMod.LOGGER.warn("Failed to load dependency entity for procedure Water2!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Items.BOWL) {
-			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WATER) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(WaterBowlItem.block);
-					_setstack.setCount((int) 1);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+		double localRayTraceDistance = 0;
+		localRayTraceDistance = 0.5;
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BOWL) {
+			for (int index0 = 0; index0 < (int) (5); index0++) {
+				if ((world
+						.getFluidState(
+								new BlockPos(
+										entity.level
+												.clip(new ClipContext(entity.getEyePosition(1f),
+														entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+														ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+												.getBlockPos().getX(),
+										entity.level
+												.clip(new ClipContext(entity.getEyePosition(1f),
+														entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+														ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+												.getBlockPos().getY(),
+										entity.level
+												.clip(new ClipContext(entity.getEyePosition(1f),
+														entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+														ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+												.getBlockPos().getZ()))
+						.createLegacyBlock()).getFluidState().isSource() == true
+						&& ((world
+								.getFluidState(new BlockPos(
+										entity.level.clip(
+												new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f)
+														.add(entity.getViewVector(1f).scale(localRayTraceDistance)), ClipContext.Block.OUTLINE,
+														ClipContext.Fluid.NONE, entity))
+												.getBlockPos().getX(),
+										entity.level.clip(new ClipContext(entity.getEyePosition(1f),
+												entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+												ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY(),
+										entity.level
+												.clip(new ClipContext(entity.getEyePosition(1f),
+														entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+														ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+												.getBlockPos().getZ()))
+								.createLegacyBlock()).getBlock() == Blocks.WATER
+								|| (world
+										.getFluidState(
+												new BlockPos(
+														entity.level
+																.clip(new ClipContext(entity.getEyePosition(1f),
+																		entity.getEyePosition(1f).add(entity
+																				.getViewVector(1f).scale(localRayTraceDistance)),
+																		ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getX(),
+														entity.level
+																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f)
+																		.add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+																		ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getY(),
+														entity.level
+																.clip(new ClipContext(entity.getEyePosition(1f),
+																		entity.getEyePosition(1f)
+																				.add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+																		ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getZ()))
+										.createLegacyBlock()).getBlock() == Blocks.WATER
+								|| (world
+										.getFluidState(
+												new BlockPos(
+														entity.level.clip(new ClipContext(entity.getEyePosition(1f),
+																entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+																ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+														entity.level
+																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f)
+																		.add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+																		ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getY(),
+														entity.level
+																.clip(new ClipContext(entity.getEyePosition(1f),
+																		entity.getEyePosition(1f)
+																				.add(entity.getViewVector(1f).scale(localRayTraceDistance)),
+																		ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getZ()))
+										.createLegacyBlock()).getBlock() == Blocks.BUBBLE_COLUMN)) {
+					if (entity instanceof LivingEntity _entity)
+						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack = new ItemStack(Items.BOWL);
+						_setstack.setCount(
+								(int) (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getCount() - 1));
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
+					}
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
+						if (entity instanceof LivingEntity _entity) {
+							ItemStack _setstack = new ItemStack(RiceModItems.WATER_BOWL.get());
+							_setstack.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+					} else {
+						if (entity instanceof Player _player) {
+							ItemStack _setstack = new ItemStack(RiceModItems.WATER_BOWL.get());
+							_setstack.setCount(1);
+							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+						}
+					}
+					break;
 				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(Items.BOWL);
-					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-							((PlayerEntity) entity).container.func_234641_j_());
-				}
+				localRayTraceDistance = localRayTraceDistance + 1;
 			}
 		}
 	}

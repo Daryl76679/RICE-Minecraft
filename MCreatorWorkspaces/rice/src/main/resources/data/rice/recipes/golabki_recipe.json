@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:onions"
+    },
+    {
+      "tag": "forge:tool_pot"
+    },
+    {
+      "tag": "forge:cookingoil"
+    },
+    {
+      "tag": "forge:groundmeats/groundbeef"
+    },
+    {
+      "item": "rice:blanched_cabbage"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "item": "rice:rice_bowl_2"
+    },
+    {
+      "tag": "forge:stock"
+    }
+  ],
+  "result": {
+    "item": "rice:golabki",
+    "count": 4
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "rice:custom/metal_pot_cabbage",
+  "textures": {
+    "all": "rice:blocks/metal_pot",
+    "particle": "rice:blocks/metal_pot",
+    "0": "rice:blocks/string",
+    "2": "rice:blocks/cabbage"
+  }
+}

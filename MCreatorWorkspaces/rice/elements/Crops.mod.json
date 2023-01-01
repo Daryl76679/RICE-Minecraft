@@ -1,0 +1,33 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:RiceSproutBlock"
+      },
+      {
+        "value": "CUSTOM:RiceSproutSecondState"
+      },
+      {
+        "value": "CUSTOM:RiceSproutThirdState"
+      },
+      {
+        "value": "CUSTOM:RiceSproutTop"
+      },
+      {
+        "value": "CUSTOM:CultivatedRiceBase"
+      },
+      {
+        "value": "CUSTOM:CultivatedRiceTop"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "name": "crops",
+    "namespace": "minecraft"
+  }
+}

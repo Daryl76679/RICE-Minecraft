@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "metal_pot",
+        "1": "waterstrip"
+      },
+      "name": "default"
+    }
+  }
+}

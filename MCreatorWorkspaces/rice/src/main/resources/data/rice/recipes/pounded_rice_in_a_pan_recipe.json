@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:tool_skillet"
+    },
+    {
+      "item": "rice:pounded_rice"
+    },
+    {
+      "item": "rice:pounded_rice"
+    },
+    {
+      "item": "rice:pounded_rice"
+    }
+  ],
+  "result": {
+    "item": "rice:pounded_rice_in_a_pan",
+    "count": 1
+  }
+}

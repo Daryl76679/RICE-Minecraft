@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -10,31 +10,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
         "value": "TAG:forge:tool_grinder"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "CUSTOM:RawBrownRice"
+        "value": "TAG:forge:crops/rice"
       }
     ],
     "recipeReturnStack": {

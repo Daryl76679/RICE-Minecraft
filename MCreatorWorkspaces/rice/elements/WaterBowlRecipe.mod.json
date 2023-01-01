@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -16,7 +16,7 @@
         "value": "Items.BOWL"
       },
       {
-        "value": "Items.POTIONITEM"
+        "value": ""
       },
       {
         "value": ""

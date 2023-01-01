@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:knife"
+    },
+    {
+      "item": "minecraft:beef"
+    }
+  ],
+  "result": {
+    "item": "rice:raw_ground_beef",
+    "count": 1
+  }
+}

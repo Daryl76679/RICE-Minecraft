@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rice:rice_bowl_2"
+    },
+    {
+      "tag": "forge:tool_grinder"
+    },
+    {
+      "item": "rice:rice_bowl_2"
+    }
+  ],
+  "result": {
+    "item": "rice:pounded_rice",
+    "count": 3
+  }
+}

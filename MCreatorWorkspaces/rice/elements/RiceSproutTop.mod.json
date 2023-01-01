@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "second_state_top",
@@ -123,6 +123,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "RiceSproutTopBlockAdded"
+    },
     "onTickUpdate": {
       "name": "RiceSproutTopUpdateTick"
     },

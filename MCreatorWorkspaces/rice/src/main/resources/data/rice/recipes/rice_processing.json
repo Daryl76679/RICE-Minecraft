@@ -1,13 +1,39 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "rice:rice_sprout_block"
+    },
+    "1": {
+      "item": "rice:rice_sprout_block"
+    },
+    "2": {
+      "item": "rice:rice_sprout_block"
+    },
+    "3": {
+      "item": "rice:rice_sprout_block"
+    },
+    "4": {
       "tag": "forge:tool_grinder"
     },
-    {
+    "5": {
+      "item": "rice:rice_sprout_block"
+    },
+    "6": {
+      "item": "rice:rice_sprout_block"
+    },
+    "7": {
+      "item": "rice:rice_sprout_block"
+    },
+    "8": {
       "item": "rice:rice_sprout_block"
     }
-  ],
+  },
   "result": {
     "item": "rice:raw_brown_rice",
     "count": 6

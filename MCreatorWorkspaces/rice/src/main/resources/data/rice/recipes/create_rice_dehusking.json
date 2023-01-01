@@ -1,0 +1,15 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "rice:rice_sprout_block"
+    }
+  ],
+  "results": [
+    {
+      "item": "rice:raw_brown_rice",
+      "count": 1
+    }
+  ],
+  "processingTime": 85
+}

@@ -1,8 +1,8 @@
 {
   "parent": "rice:custom/grain_flail",
   "textures": {
-    "0": "rice:blocks/string",
-    "1": "rice:blocks/sticks",
+    "2": "rice:blocks/string",
+    "3": "rice:blocks/sticks2",
     "particle": "rice:items/grain_flail"
   }
 }

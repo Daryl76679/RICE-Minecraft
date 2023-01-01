@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:onions"
+      },
+      {
+        "value": "TAG:forge:tool_pot"
+      },
+      {
+        "value": "TAG:forge:cookingoil"
+      },
+      {
+        "value": "TAG:forge:groundmeats/groundbeef"
+      },
+      {
+        "value": "CUSTOM:BlanchedCabbage"
+      },
+      {
+        "value": "TAG:forge:salt"
+      },
+      {
+        "value": "CUSTOM:RiceBowl2"
+      },
+      {
+        "value": "TAG:forge:stock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Golabki"
+    },
+    "name": "golabki_recipe",
+    "namespace": "mod"
+  }
+}

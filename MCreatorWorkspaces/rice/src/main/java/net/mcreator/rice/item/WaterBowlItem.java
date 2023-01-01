@@ -1,77 +1,48 @@
 
 package net.mcreator.rice.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 
-import net.minecraft.world.World;
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.Food;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.block.BlockState;
+public class WaterBowlItem extends Item {
+	public WaterBowlItem() {
+		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(1).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(0).saturationMod(0.2f).alwaysEat()
 
-import net.mcreator.rice.RiceModElements;
-
-@RiceModElements.ModElement.Tag
-public class WaterBowlItem extends RiceModElements.ModElement {
-	@ObjectHolder("rice:water_bowl")
-	public static final Item block = null;
-
-	public WaterBowlItem(RiceModElements instance) {
-		super(instance, 63);
+						.build()));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.DRINK;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(1).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(0).saturation(0.2f).setAlwaysEdible().build()));
-			setRegistryName("water_bowl");
-		}
+	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 0F;
+	}
 
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.DRINK;
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getEatSound() {
-			return net.minecraft.util.SoundEvents.ENTITY_GENERIC_DRINK;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 0F;
-		}
-
-		@Override
-		public ItemStack onItemUseFinish(ItemStack itemstack, World world, LivingEntity entity) {
-			ItemStack retval = new ItemStack(Items.BOWL);
-			super.onItemUseFinish(itemstack, world, entity);
-			if (itemstack.isEmpty()) {
-				return retval;
-			} else {
-				if (entity instanceof PlayerEntity) {
-					PlayerEntity player = (PlayerEntity) entity;
-					if (!player.isCreative() && !player.inventory.addItemStackToInventory(retval))
-						player.dropItem(retval, false);
-				}
-				return itemstack;
+	@Override
+	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
+		ItemStack retval = new ItemStack(Items.BOWL);
+		super.finishUsingItem(itemstack, world, entity);
+		if (itemstack.isEmpty()) {
+			return retval;
+		} else {
+			if (entity instanceof Player player && !player.getAbilities().instabuild) {
+				if (!player.getInventory().add(retval))
+					player.drop(retval, false);
 			}
+			return itemstack;
 		}
 	}
 }

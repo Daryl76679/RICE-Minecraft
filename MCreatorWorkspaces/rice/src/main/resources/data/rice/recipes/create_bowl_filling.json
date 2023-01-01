@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "fluid": "minecraft:water",
+      "nbt": {},
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "item": "rice:water_bowl"
+    }
+  ]
+}

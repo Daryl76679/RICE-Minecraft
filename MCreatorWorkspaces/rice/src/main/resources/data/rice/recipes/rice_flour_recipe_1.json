@@ -7,31 +7,31 @@
   ],
   "key": {
     "0": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "1": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "2": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "3": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "4": {
       "tag": "forge:tool_grinder"
     },
     "5": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "6": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "7": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     },
     "8": {
-      "item": "rice:raw_brown_rice"
+      "tag": "forge:crops/rice"
     }
   },
   "result": {

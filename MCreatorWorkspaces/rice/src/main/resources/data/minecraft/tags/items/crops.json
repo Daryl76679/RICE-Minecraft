@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "rice:rice_sprout_third_state",
+    "rice:cultivated_rice_base",
+    "rice:rice_sprout_block",
+    "rice:cultivated_rice_top",
+    "rice:rice_sprout_second_state",
+    "rice:rice_sprout_top"
+  ]
+}

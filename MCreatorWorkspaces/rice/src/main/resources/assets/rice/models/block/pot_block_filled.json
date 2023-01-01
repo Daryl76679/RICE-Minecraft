@@ -1,0 +1,9 @@
+{
+  "parent": "rice:custom/metal_pot",
+  "textures": {
+    "all": "rice:blocks/metal_pot",
+    "particle": "rice:blocks/metal_pot",
+    "0": "rice:blocks/metal_pot",
+    "1": "rice:blocks/waterstrip"
+  }
+}

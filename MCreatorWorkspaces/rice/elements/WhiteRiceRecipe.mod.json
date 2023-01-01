@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -16,7 +16,7 @@
         "value": "TAG:forge:crops/rice"
       },
       {
-        "value": "TAG:forge:rice_done"
+        "value": "TAG:forge:tool_grinder"
       },
       {
         "value": ""

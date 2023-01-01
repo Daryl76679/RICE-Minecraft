@@ -1,73 +1,60 @@
 
 package net.mcreator.rice.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-
-import net.mcreator.rice.RiceModElements;
-
-@RiceModElements.ModElement.Tag
-public class FryingPanItem extends RiceModElements.ModElement {
-	@ObjectHolder("rice:frying_pan")
-	public static final Item block = null;
-
-	public FryingPanItem(RiceModElements instance) {
-		super(instance, 72);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new SwordItem(new IItemTier() {
-			public int getMaxUses() {
+public class FryingPanItem extends SwordItem {
+	public FryingPanItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 250;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 4f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 0.4f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 1;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 14;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Items.IRON_INGOT));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(Items.IRON_INGOT));
 			}
-		}, 3, -3f, new Item.Properties().group(ItemGroup.MATERIALS)) {
-			@Override
-			public boolean hasContainerItem() {
-				return true;
-			}
+		}, 3, -3f, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS));
+	}
 
-			@Override
-			public ItemStack getContainerItem(ItemStack itemstack) {
-				ItemStack retval = new ItemStack(this);
-				retval.setDamage(itemstack.getDamage() + 1);
-				if (retval.getDamage() >= retval.getMaxDamage()) {
-					return ItemStack.EMPTY;
-				}
-				return retval;
-			}
+	@Override
+	public boolean hasContainerItem(ItemStack stack) {
+		return true;
+	}
 
-			@Override
-			public boolean isRepairable(ItemStack itemstack) {
-				return false;
-			}
-		}.setRegistryName("frying_pan"));
+	@Override
+	public ItemStack getContainerItem(ItemStack itemstack) {
+		ItemStack retval = new ItemStack(this);
+		retval.setDamageValue(itemstack.getDamageValue() + 1);
+		if (retval.getDamageValue() >= retval.getMaxDamage()) {
+			return ItemStack.EMPTY;
+		}
+		return retval;
+	}
+
+	@Override
+	public boolean isRepairable(ItemStack itemstack) {
+		return false;
 	}
 }

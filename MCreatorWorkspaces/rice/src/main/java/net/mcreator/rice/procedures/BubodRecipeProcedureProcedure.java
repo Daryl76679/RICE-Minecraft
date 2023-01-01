@@ -3,61 +3,37 @@ package net.mcreator.rice.procedures;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 
-import net.mcreator.rice.block.BubodDoughBlock;
-import net.mcreator.rice.RiceMod;
+import net.mcreator.rice.init.RiceModBlocks;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
+@Mod.EventBusSubscriber
 public class BubodRecipeProcedureProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
-			Entity entity = event.getPlayer();
-			World world = entity.world;
-			double i = entity.getPosX();
-			double j = entity.getPosY();
-			double k = entity.getPosZ();
-			ItemStack itemStack = event.getCrafting();
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("itemstack", itemStack);
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
-		}
+	@SubscribeEvent
+	public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+		execute(event, event.getPlayer(), event.getCrafting());
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				RiceMod.LOGGER.warn("Failed to load dependency entity for procedure BubodRecipeProcedure!");
+	public static void execute(Entity entity, ItemStack itemstack) {
+		execute(null, entity, itemstack);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				RiceMod.LOGGER.warn("Failed to load dependency itemstack for procedure BubodRecipeProcedure!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		if (itemstack.getItem() == BubodDoughBlock.block.asItem()) {
-			if (entity instanceof PlayerEntity) {
+		if (itemstack.getItem() == RiceModBlocks.BUBOD_DOUGH.get().asItem()) {
+			if (entity instanceof Player _player) {
 				ItemStack _setstack = new ItemStack(Items.BOWL);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
 		}
 	}

@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "rice:raw_rice_and_egg"
   },
-  "result": {
-    "item": "rice:rice_and_egg"
-  }
+  "result": "rice:rice_and_egg"
 }

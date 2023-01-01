@@ -17,12 +17,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/honey_block": {
-    "criteria": {
-      "has_honey_bottle": "2022-07-23 14:58:24 -0400"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/wooden_axe": {
     "criteria": {
       "has_stick": "2022-03-24 19:51:28 -0400"
@@ -107,6 +101,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/honey_block": {
+    "criteria": {
+      "has_honey_bottle": "2022-12-30 23:29:08 -0400"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/magenta_wool": {
     "criteria": {
       "has_white_wool": "2022-02-11 23:18:50 -0400"
@@ -176,6 +176,12 @@
   "minecraft:recipes/building_blocks/cyan_wool": {
     "criteria": {
       "has_white_wool": "2022-02-11 23:18:50 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/nether_brick": {
+    "criteria": {
+      "has_netherrack": "2022-12-31 22:22:05 -0400"
     },
     "done": true
   },
@@ -464,17 +470,15 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:forest": "2022-02-10 17:47:22 -0400",
-      "minecraft:mountains": "2022-02-10 17:51:10 -0400",
-      "minecraft:taiga": "2022-02-10 18:19:30 -0400",
-      "minecraft:taiga_hills": "2022-02-12 18:29:03 -0400",
-      "minecraft:birch_forest": "2022-07-23 15:38:39 -0400",
+      "minecraft:taiga": "2022-02-12 18:29:03 -0400",
+      "minecraft:birch_forest": "2022-07-23 15:38:43 -0400",
+      "minecraft:windswept_hills": "2022-02-10 17:51:10 -0400",
       "minecraft:dark_forest": "2022-02-10 19:20:15 -0400",
       "minecraft:river": "2022-02-10 17:47:58 -0400",
-      "minecraft:birch_forest_hills": "2022-07-23 15:38:43 -0400",
-      "minecraft:wooded_mountains": "2022-02-12 18:28:27 -0400",
-      "minecraft:wooded_hills": "2022-02-10 17:47:59 -0400",
       "minecraft:swamp": "2022-02-10 17:52:20 -0400",
+      "minecraft:forest": "2022-02-10 17:47:59 -0400",
+      "minecraft:windswept_forest": "2022-02-12 18:28:27 -0400",
+      "minecraft:windswept_gravelly_hills": "2022-12-31 19:19:44 -0400",
       "minecraft:plains": "2022-02-10 19:20:42 -0400"
     },
     "done": false
@@ -695,7 +699,7 @@
   },
   "minecraft:recipes/misc/light_gray_dye_from_oxeye_daisy": {
     "criteria": {
-      "has_red_flower": "2022-07-23 14:58:24 -0400"
+      "has_oxeye_daisy": "2022-12-30 23:29:08 -0400"
     },
     "done": true
   },
@@ -737,9 +741,9 @@
   },
   "minecraft:recipes/building_blocks/bone_block": {
     "criteria": {
-      "has_bonemeal": "2022-07-23 14:58:24 -0400"
+      "has_bone_meal": "2022-12-30 23:29:08 -0400"
     },
     "done": true
   },
-  "DataVersion": 2586
+  "DataVersion": 2975
 }

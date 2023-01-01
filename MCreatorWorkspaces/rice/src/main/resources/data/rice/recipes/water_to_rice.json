@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "rice:water_bowl_with_rice_2"
   },
-  "result": {
-    "item": "rice:rice_bowl_2"
-  }
+  "result": "rice:rice_bowl_2"
 }

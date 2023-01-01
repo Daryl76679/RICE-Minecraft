@@ -1,0 +1,33 @@
+{
+  "_fv": 34,
+  "_type": "villagertrade",
+  "definition": {
+    "tradeEntries": [
+      {
+        "villagerProfession": {
+          "value": "FARMER"
+        },
+        "entries": [
+          {
+            "price1": {
+              "value": "Items.EMERALD"
+            },
+            "countPrice1": 1,
+            "price2": {
+              "value": "Items.EMERALD"
+            },
+            "countPrice2": 2,
+            "offer": {
+              "value": "CUSTOM:RiceSproutBlock"
+            },
+            "countOffer": 3,
+            "level": 1,
+            "maxTrades": 10,
+            "xp": 5,
+            "priceMultiplier": 0.05
+          }
+        ]
+      }
+    ]
+  }
+}

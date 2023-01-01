@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "rice:harvested_rice"
+    }
+  ],
+  "results": [
+    {
+      "item": "rice:rice_sprout_block"
+      "count": 4
+    }
+  ]
+}

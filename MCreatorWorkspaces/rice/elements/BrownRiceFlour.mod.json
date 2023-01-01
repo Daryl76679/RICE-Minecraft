@@ -1,9 +1,9 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "riceflour1",
+    "texture": "riceflour1_2",
     "customModelName": "Normal",
     "name": "Brown Rice Flour",
     "rarity": "COMMON",

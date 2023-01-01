@@ -1,53 +1,28 @@
 
 package net.mcreator.rice.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.food.FoodProperties;
 
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.Food;
-import net.minecraft.block.BlockState;
+public class RiceStemItem extends Item {
+	public RiceStemItem() {
+		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(64).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(1).saturationMod(0f)
 
-import net.mcreator.rice.RiceModElements;
-
-@RiceModElements.ModElement.Tag
-public class RiceStemItem extends RiceModElements.ModElement {
-	@ObjectHolder("rice:rice_stem")
-	public static final Item block = null;
-
-	public RiceStemItem(RiceModElements instance) {
-		super(instance, 62);
+						.build()));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public int getUseDuration(ItemStack itemstack) {
+		return 16;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(1).saturation(0f)
-
-							.build()));
-			setRegistryName("rice_stem");
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public int getUseDuration(ItemStack itemstack) {
-			return 16;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 0F;
-		}
+	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 0F;
 	}
 }

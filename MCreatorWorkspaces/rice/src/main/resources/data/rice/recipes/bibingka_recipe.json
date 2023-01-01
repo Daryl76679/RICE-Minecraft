@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "rice:bibingka_dough"
   },
-  "result": {
-    "item": "rice:bibingka"
-  }
+  "result": "rice:bibingka"
 }

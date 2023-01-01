@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -7,19 +7,19 @@
     "cookingTime": 200,
     "recipeRetstackSize": 6,
     "group": "",
-    "recipeShapeless": true,
+    "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
         "value": "TAG:forge:tool_grinder"
@@ -28,13 +28,13 @@
         "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RiceSproutBlock"
       }
     ],
     "recipeReturnStack": {

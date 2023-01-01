@@ -1,11 +1,11 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "whiterice",
     "customModelName": "Normal",
-    "name": "Raw Brown Rice",
+    "name": "Raw White Rice",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "MISC"

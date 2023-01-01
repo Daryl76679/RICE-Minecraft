@@ -1,5 +1,5 @@
 {
-  "type": "create:milling",
+  "type": "create:crushing",
   "ingredients": [
     {
       "item": "rice:raw_brown_rice"
